@@ -12,6 +12,38 @@ describe('calculator', function () {
     assert.equal(true, true)
   })
 
+  // multiply 3x5 and get 15
+  it("can multiply 3x5 and get 15", function(){
+    calculator.runningTotal = 0;
+    calculator.previousTotal = 5;
+    calculator.multiply(3)
+    assert.equal(15, calculator.runningTotal)
+  })
+  // divide 21/7 and get 3
+  it("can divide 21/7 and get 3", function(){
+    calculator.runningTotal = 0;
+    calculator.previousTotal = 21;
+    calculator.divide(7)
+    assert.equal(3, calculator.runningTotal)
+  })
+  // add 1+4 and get 5
+  it("can add 1+4 and get 5", function(){
+    calculator.runningTotal = 0;
+    calculator.previousTotal = 1;
+    calculator.add(4)
+    assert.equal(5, calculator.runningTotal)
+  })
+  // subtract 7-4 and get 3
+  it("can add 1+4 and get 5", function(){
+    calculator.runningTotal = 0;
+    calculator.previousTotal = 7;
+    calculator.subtract(4)
+    assert.equal(3, calculator.runningTotal)
+  })
+
+
+///////////////testing Add/////////////
+
   it('can add 2+2', function(){
     calculator.runningTotal = 0;
     calculator.previousTotal = 2;
@@ -75,6 +107,8 @@ describe('calculator', function () {
     assert.equal(21.1, calculator.runningTotal)
   })
 
+  ////////////Testing Suubtract //////////
+
   it('can subtract small numbers', function(){
     calculator.runningTotal = 0;
     calculator.previousTotal = 90;
@@ -110,16 +144,16 @@ describe('calculator', function () {
     assert.equal(3.1, calculator.runningTotal)
   })
 
-  ///////////FAIL/////toFixed to fix
+
   it('can subtract decimals decrementing digit', function(){
     calculator.runningTotal = 0;
     calculator.previousTotal = 3.2;
     calculator.subtract(.3);
-    assert.equal(2.9, calculator.runningTotal.toFixed(1))
+    assert.equal(2.9, calculator.runningTotal.toFixed(1))//toFixed to fix...
   })
-  ///////////FAIL///////////
 
 
+////////////////Testing Multiply/////////////
 
   it('multiply small numbers', function(){
     calculator.runningTotal = 0;
@@ -141,6 +175,8 @@ describe('calculator', function () {
     calculator.multiply(-5);
     assert.equal(25, calculator.runningTotal)
   })
+
+  //////////Testing Divide//////////////
 
   it('can divide to integer result', function(){
     calculator.runningTotal = 0;
@@ -198,14 +234,16 @@ describe('calculator', function () {
     assert.equal(3, calculator.runningTotal)
   })
 
-  // it('can handle division by zero', function(){
-  //   calculator.runningTotal = 0;
-  //   calculator.previousTotal = 1;
-  //   calculator.divide(0);
-  //   assert.equal(Infinity, calculator.runningTotal)
-  // })
-//////////////////////////////////////
-////// HOW TO TEST ALERT ///////////
-
+  it('can handle division by zero', function(){
+    calculator.runningTotal = 0;
+    calculator.previousTotal = 1;
+    calculator.divide(0);
+    assert.equal(Infinity, calculator.runningTotal)
+  })
+////////////////////////////////////////////////////////////////
+////////////////  AN ALERT BOX /////////////////////////////////
+///// Could be added when dividing by zero /////////////////////
+////  Suggested code is in the calculator.js divide file, //////
+///  but commented out. //////////////////////////////////////// 
 
 });

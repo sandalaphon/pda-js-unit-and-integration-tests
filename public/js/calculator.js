@@ -21,10 +21,10 @@ Calculator.prototype = {
   },
 
   divide: function(number){
-    if(number===0) {
-      alert("Division by zero is not possible")
-      return
-    }
+    // if(number===0) {
+    //   alert("Division by zero is not possible")
+    //   return
+    // }
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number)
     
   },
